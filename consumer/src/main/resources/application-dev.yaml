@@ -1,16 +1,20 @@
 spring:
-  kafka:
-    bootstrap-servers: ${KAFKA_URL}
-    consumer:
-      group-id: telemetry-service
-      auto-offset-reset: earliest
-      value-deserializer: JsonDeserializer
-
   datasource:
     url: ${PG_URL}
     password: ${PG_PASSWORD}
     username: ${PG_USER}
 
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    consumer:
+      group-id: telemetry-service
+      auto-offset-reset: earliest
+#      value-deserializer: "org.springframework.kafka.support.serializer.JacksonJsonDeserializer"
+      value-deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+      key-deserializer: "org.apache.kafka.common.serialization.StringDeserializer"
+#      properties:
+#        spring.json.use.type.headers: false
+#        spring.json.trusted.packages: "*"
   flyway:
     enabled: true
 
