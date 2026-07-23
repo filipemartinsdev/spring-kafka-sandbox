@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    consumer:
+      group-id: telemetry-service
+      auto-offset-reset: earliest
+      value-deserializer: JsonDeserializer
+
+  datasource:
+    url: ${PG_URL}
+    password: ${PG_PASSWORD}
+    username: ${PG_USER}
+
+  flyway:
+    enabled: true
+
+  jpa:
+    hibernate:
+      ddl-auto: none

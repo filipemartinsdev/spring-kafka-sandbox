@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: consumer
+
+  profiles:
+    active: ${ACTIVE_PROFILE:test}

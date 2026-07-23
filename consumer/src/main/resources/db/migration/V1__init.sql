@@ -1,0 +1,6 @@
+CREATE TABLE temperature (
+    id UUID PRIMARY KEY,
+    component_id UUID NOT NULL,
+    value DECIMAL(2, 1) NOT NULL,
+    timestamp TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);

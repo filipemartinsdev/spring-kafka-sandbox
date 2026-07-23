@@ -1,0 +1,7 @@
+spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_URL}
+    consumer:
+      group-id: telemetry-service
+      auto-offset-reset: earliest
+      value-deserializer: JsonDeserializer
