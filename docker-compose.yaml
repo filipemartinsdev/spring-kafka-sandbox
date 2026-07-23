@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       ACTIVE_PROFILE: dev
-      KAFKA_URL: kafka:9092
+      KAFKA_URL: kafka:29092
     depends_on:
       consumer_db:
         condition: service_started
@@ -30,8 +30,8 @@ services:
       ACTIVE_PROFILE: dev
       PG_USER: postgres
       PG_PASSWORD: postgres
-      PG_URL: jdbc:postgresql://consumer_db:5433/postgres
-      KAFKA_URL: kafka:9092
+      PG_URL: jdbc:postgresql://consumer_db:5432/postgres
+      KAFKA_URL: kafka:29092
     depends_on:
       consumer_db:
         condition: service_started
@@ -48,6 +48,7 @@ services:
     container_name: consumer_db
     image: postgres:17-alpine
     environment:
+      KAFKA_URL: kafka:29092
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
@@ -88,6 +89,7 @@ services:
           memory: 500M
 
   kafka-ui:
+    container_name: kafka-ui
     image: provectuslabs/kafka-ui:latest
     ports:
       - "8081:8080"
