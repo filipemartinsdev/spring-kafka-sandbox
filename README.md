@@ -1,7 +1,6 @@
 # Spring Kafka Sandbox
 
-
-This is a study project implementing Apache Kafka using Spring Boot 4.
+Study project implementing Apache Kafka using Spring Boot 4.
 
 
 ## Technologies
@@ -26,3 +25,5 @@ The purpose is to create a simples IoT simulation with constant events and analy
 ```bash
 docker compose up -d --build
 ```
+
+- KafkaUI will be available on `http://localhost:8081`.
