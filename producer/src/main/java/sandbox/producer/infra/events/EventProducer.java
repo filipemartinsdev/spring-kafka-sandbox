@@ -5,6 +5,8 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import sandbox.producer.application.dto.event.NewTemperatureEvent;
 
+
+
 @Slf4j
 @Component
 public class EventProducer {

@@ -1,7 +1,6 @@
 spring:
   kafka:
     bootstrap-servers: ${KAFKA_URL}
-    consumer:
-      group-id: telemetry-service
-      auto-offset-reset: earliest
-      value-deserializer: JsonDeserializer
+    producer:
+      value-serializer: "org.springframework.kafka.support.serializer.JacksonJsonSerializer"
+      key-serializer: "org.apache.kafka.common.serialization.StringSerializer"
