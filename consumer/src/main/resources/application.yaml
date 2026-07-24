@@ -4,3 +4,4 @@ spring:
 
   profiles:
     active: ${ACTIVE_PROFILE:test}
+

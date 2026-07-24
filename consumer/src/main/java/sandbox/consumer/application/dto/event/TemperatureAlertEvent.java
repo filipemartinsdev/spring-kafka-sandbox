@@ -3,9 +3,9 @@ package sandbox.consumer.application.dto.event;
 import java.time.Instant;
 import java.util.UUID;
 
-public record NewTemperatureEvent(
+public record TemperatureAlertEvent(
         UUID componentId,
-        Float value,
+        String text,
         Instant timestamp
 ) {
 }

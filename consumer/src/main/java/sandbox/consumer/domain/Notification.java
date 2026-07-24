@@ -9,27 +9,18 @@ import lombok.NoArgsConstructor;
 import java.time.Instant;
 import java.util.UUID;
 
-@Entity @Table(name = "temperature")
-@AllArgsConstructor @NoArgsConstructor @Data
-public class Temperature {
+@Entity @Table(name = "notification")
+@Data @AllArgsConstructor @NoArgsConstructor
+public class Notification {
     @Id @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @NotNull
-    @Column(name = "component_id")
-    private UUID componentId;
+    private String text;
 
     @NotNull
-    private Integer value;
+    private Instant timestamp;
 
-    @NotNull
-    private Instant timestamp = Instant.now();
+    @NotNull @Column(name = "created_at")
+    private Instant createdAt = Instant.now();
 }
-
-
-
-
-
-
-
-
