@@ -20,7 +20,7 @@ The purpose is to create a simples IoT simulation with constant events and analy
 
 ### Telemetry Analytics Stream
 
-![Kafka Streams](images/streams.png)
+![Kafka Streams](images/stream.png)
 
 ## How to execute
 
