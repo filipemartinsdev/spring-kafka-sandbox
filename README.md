@@ -18,6 +18,10 @@ The purpose is to create a simples IoT simulation with constant events and analy
 
 ![Architecture](images/arch.png)
 
+### Telemetry Analytics Stream
+
+![Kafka Streams](images/streams.png)
+
 ## How to execute
 
 1. Start all services
