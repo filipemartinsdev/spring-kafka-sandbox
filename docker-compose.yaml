@@ -80,8 +80,8 @@ services:
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
       CLUSTER_ID: "4L6g3nShT-eMCtK--X86sw"
-#    volumes:
-#      kafka_data:/
+    volumes:
+      - kafka_data:/var/lib/kafka/data
     deploy:
       resources:
         limits:
@@ -106,4 +106,4 @@ services:
 
 volumes:
   consumer_db:
-#  kafka_data:
+  kafka_data:
