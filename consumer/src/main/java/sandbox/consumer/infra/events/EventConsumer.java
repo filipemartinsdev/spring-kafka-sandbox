@@ -24,8 +24,6 @@ public class EventConsumer {
     )
     public void consume(String json){
         TemperatureAlertEvent event = objectMapper.readValue(json, TemperatureAlertEvent.class);
-        log.info("Received alert {}º", event.text());
-
         telemetryService.handleAlert(event);
     }
 }

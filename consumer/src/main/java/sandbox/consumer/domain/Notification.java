@@ -16,9 +16,11 @@ public class Notification {
     private UUID id;
 
     @NotNull
-    private String text;
+    private String title;
 
     @NotNull
+    private String text;
+
     private Instant timestamp;
 
     @NotNull @Column(name = "created_at")
