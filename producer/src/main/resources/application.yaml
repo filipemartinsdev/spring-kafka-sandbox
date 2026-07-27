@@ -7,4 +7,4 @@ spring:
 
 app:
   alerts:
-    temperature-limit: 39
+    temperature-limit: 20
