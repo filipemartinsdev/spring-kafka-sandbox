@@ -5,8 +5,6 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 import sandbox.producer.application.dto.event.NewTemperatureEvent;
 
-
-
 @Slf4j
 @Component
 public class EventProducer {
@@ -18,7 +16,7 @@ public class EventProducer {
     }
 
     public void produceNewTemperature(NewTemperatureEvent event){
-        log.info("[{}] Current: {}º", event.componentId(), event.value());
+        log.info("[{}] Current: {}°", event.componentId(), event.value());
         kafkaTemplate.send("sensor.temperature.updated", event.componentId().toString(), event);
     }
 }
